@@ -10,6 +10,7 @@ cd $CAFFE_ROOT
 # This assumes running on CPU (not GPU)
 cd $CAFFE_ROOT
 # train LeNet
+# change solver_mode from gpu to cpu
 build/tools/caffe train -solver examples/mnist/lenet_solver.prototxt
 # score the learned LeNet model on the validation set as defined in the
 # model architeture lenet_train_test.prototxt
