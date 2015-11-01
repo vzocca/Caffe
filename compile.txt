@@ -1,0 +1,20 @@
+# These are the instructions on how to compile caffe on a MacOS
+
+cd $(brew --prefix)
+cd Library/Formula
+# Make a backup of the files boost.rb and boost-python.rb
+# Replace the boost.rb file with the contents of 
+# https://raw.githubusercontent.com/Homebrew/homebrew/6fd6a9b6b2f56139a44dd689d30b7168ac13effb/Library/Formula/boost.rb
+# Replace the boost-python.rb file with the contents of
+# https://raw.githubusercontent.com/Homebrew/homebrew/3141234b3473717e87f3958d4916fe0ada0baba9/Library/Formula/boost-python.rb
+# this should uninstall the 1.58.0 version
+brew uninstall boost
+# this should install 1.57.0 since we have replaced the rb files
+brew install boost
+
+# comment or uncomment the relevant lines (like if using Anaconda)
+cp Makefile.config.example Makefile.config
+# Adjust Makefile.config (for example, if using Anaconda Python)
+make all
+make test
+make runtest
