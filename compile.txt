@@ -13,6 +13,7 @@ brew uninstall boost
 brew install boost
 
 # comment or uncomment the relevant lines (like if using Anaconda)
+# comment the gpu line and use cpu instead
 cp Makefile.config.example Makefile.config
 # Adjust Makefile.config (for example, if using Anaconda Python)
 make all
